@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Carta Virtual del Restaurante La Mesedora Algemesí">
+    <meta name="keywords" content="Mesedora, Restaurante, Restaurante Algemesí, Algemesí, La Mesedora, La Mesedora To Go, Carta Virtual">
+    <meta name="author" content="IgnacioChambó">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Mesedora | Carta</title>
+    <link rel="icon" href="img/logoMesedora.png" type="image/png" />
+    <!--Necesario para ejecutar jquery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="js/irArriba.js"></script>
+    <script src="js/scrollHorizontalBlock.js"></script>
+    <!--Estilos Carta-->
+    <link rel="stylesheet" href="css/stylesCarta.css">
+    <link href="https://fonts.googleapis.com/css?family=Modak|Roboto" rel="stylesheet">
+    <!-- FONTAWESOME-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- RECOMENDACION SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/recomendaciones.js"></script>
+
+
+
+
+    <script src="js/tabs.js"></script>
+</head>
+
+<body>
+
+    <!--------------------------------------------
+      ----------------------------------------------
+                       FLECHA ARRIBA
+      ----------------------------------------------
+      ---------------------------------------------->
+    <span class="ir-arriba fas fa-angle-up"></span>
+
+    <!--------------------------------------------
+      ----------------------------------------------
+                          HEADER
+      ----------------------------------------------
+      ---------------------------------------------->
+    <header class="hero">
+        <nav class="nav__hero">
+            <div class="containerIni nav__container">
+                <div class="logo">
+                    <a href="index.html"><img src="img/logoMesedoraBlanco.png" alt="logo mesedora" class="logoMesedora"></a>
+                </div>
+                <div class="links">
+                    <a href="carta.html" class="link link--active">Carta</a>
+                    <!--<a href="#Servicios" class="link">Hostal</a>-->
+                    <a href="eventos.html" class="link">Eventos</a>
+                </div>
+            </div>
+        </nav>
+
+        <section id="Inicio" class="containerIni hero__main">
+
+            <div id="img__Landing">
+                <img id="imagen" alt="">
+            </div>
+
+            <div class="hero__textos">
+
+                <p id="textoAntes" class="title">¿Indeciso? <br><span class="title--active">pulsa el botón</span><br> y descubre que te recomendamos hoy</p>
+
+                <p id="textoDespues" class="title">Desliza y descubre toda nuestra carta</p>
+
+
+                <div class="botonesLanding">
+
+                    <a id="boton" onclick="obtenerImagenAleatoria()" class="cta">hoy te recomendamos</a>
+
+                </div>
+
+            </div>
+
+
+
+        </section>
+    </header>
+
+    <!--------------------------------------------
+      ----------------------------------------------
+                          VIDEO
+      ----------------------------------------------
+      ---------------------------------------------->
+
+    <div class="contenido__video">
+        <video class="video" autoplay="autoplay" loop="loop" muted="muted" poster="img/ImagenFondo.jpg" alt="fondo mesedora">
+            <source src="img/video1.mp4" type="video/mp4" alt="fondo mesedora" />
+        </video>
+    </div>
+
+    <!--------------------------------------------
+      ----------------------------------------------
+                           UI
+      ----------------------------------------------
+      ---------------------------------------------->
+    <div class='ui'>
+        <div class='ui_inner'>
+            <div class='ui_fruit'>
+                <img src='img/cacaus.png' alt="Cacahuetes y aceitunas">
+            </div>
+            <div class='ui_inner__selection'>
+                <input checked='checked' id='lovely' name='selection' type='radio'>
+                <label for='lovely'>
+                    <div class='selected l'>Brascafuà</div>
+                    <div class='ui_inner__slider'>
+                        <div class='sb'>
+                            <img src='img/starburst2.png' alt="espiral">
+                        </div>
+                        <div class='slide'>
+                            <div class='slide_inner'>
+                                <div class='slide_inner__left'>
+                                    <img src='img/b1_1.png' alt="brascafua">
+                                </div>
+                                <div class='slide_inner__right'>
+                                    <h2>Brascafuà</h2>
+                                    <h3>7.50 € <span> Almuerzo</span></h3>
+                                    <p>Sabor intenso, toques brutales de foie con reducción de vino tinto acompañado de cebolla morada caramelizada y jugosa ternera. ¡Irresistible!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <input id='super' name='selection' type='radio'>
+                <label for='super'>
+                    <div class='selected s'>Delice</div>
+                    <div class='ui_inner__slider'>
+                        <div class='sb'>
+                            <img src='img/starburst2.png' alt="espiral">
+                        </div>
+                        <div class='slide'>
+                            <div class='slide_inner'>
+                                <div class='slide_inner__left'>
+                                    <img src='img/b2_1.png' alt="delice">
+                                </div>
+                                <div class='slide_inner__right'>
+                                    <h2>Delice</h2>
+                                    <h3>6.50 € <span> Almuerzo</span></h3>
+                                    <p>Uno de los looks que mejor le queda al pollo, un abrigo de pan de doble fermentación combinado con cebolla frita, queso de cabra y mostaza.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <input id='mega' name='selection' type='radio'>
+                <label for='mega'>
+                    <div class='selected m'>Carrilleraki</div>
+                    <div class='ui_inner__slider'>
+                        <div class='sb'>
+                            <img src='img/starburst2.png' alt="espiral">
+                        </div>
+                        <div class='slide'>
+                            <div class='slide_inner'>
+                                <div class='slide_inner__left'>
+                                    <img src='img/b3_1.png' alt="carrilleraki">
+                                </div>
+                                <div class='slide_inner__right'>
+                                    <h2>Carrilleraki</h2>
+                                    <h3>7.90 € <span> Almuerzo</span></h3>
+                                    <p>Una mezcla explosiva de carrilera ibérica a baja temperatura acompañada de una base de patata panadera, ajos tiernos y una salsa secreta que le queda espectacular. ¡Pruébalo, te va a encantar!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <input id='huge' name='selection' type='radio'>
+                <label for='huge'>
+                    <div class='selected h'>Chivito's</div>
+                    <div class='ui_inner__slider'>
+                        <div class='sb'>
+                            <img src='img/starburst2.png' alt="espiral">
+                        </div>
+                        <div class='slide'>
+                            <div class='slide_inner'>
+                                <div class='slide_inner__left'>
+                                    <img src='img/b4_1.png' alt="chivito">
+                                </div>
+                                <div class='slide_inner__right'>
+                                    <h2>Chivito's</h2>
+                                    <h3>7.00 € <span> Almuerzo</span></h3>
+                                    <p>Pídelo a tu gusto. ¿Eres más de lomo o de pechuga?, ¿te gusta con o sin huevo?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--------------------------------------------
+      ----------------------------------------------
+                       BOCADILLOS
+      ----------------------------------------------
+      ---------------------------------------------->
+
+    <!-- Tab links -->
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Bocadillos')" id="defaultOpen">Bocadillos</button>
+        <button class="tablinks" onclick="openCity(event, 'MenuDia')" id="menu_dia">Menú del Día</button>
+        <button class="tablinks" onclick="openCity(event, 'MenuExecutive')" id="menu_executive">Menú <i>Executive</i></button>
+    </div>
+
+
+
+    <!-- Tab content -->
+    <div id="Bocadillos" class="tabcontent">
+        <section class="bocadillos">
+            <div class="cards">
+                <div class="card"><img src="img/Festa_de_l_Esmorzaret.jpg" alt="festa del esmorzaret">
+                    <h3>Festa de l'Esmorzaret</h3>
+                    <h5>El bocadillo elegido por todos vosotros a través de nuestro Instagram. Auténtica pechuga rebozada crujiente, tomate rayado natural, queso brie fundido y bacon. ¡Brutal!</h5>
+                    <p>7.00€ <span> / Almuerzo</span>
+                </div>
+                <div class="card"><img src="img/Carrilleraki.png" alt="carrilleraki">
+                    <h3>Carrilleraki</h3>
+                    <h5>Una mezcla explosiva de carrilera ibérica a baja temperatura acompañada de una base de patata panadera, ajos tiernos y una salsa secreta que le queda espectacular. ¡Pruébalo, te va a encantar!</h5>
+                    <p>7.90€ <span> / Almuerzo</span>
+                </div>
+                <div class="card"><img src="img/Brascafua.jpg" alt="brascafua">
+                    <h3>Brascafuà</h3>
+                    <h5>Sabor intenso, toques brutales de foie con reducción de vino tinto acompañado de cebolla morada caramelizada y jugosa ternera. ¡Irresistible!</h5>
+                    <p>7.50€ <span> / Almuerzo</span>
+                </div>
+                <div class="card"><img src="img/Oh_La_La.jpg" alt="oh la la">
+                    <h3>Oh La La</h3>
+                    <h5>De Roquefort-sur-Soulzon a La Mesedora para acompañar al lomo y a las patatas.</h5>
+                    <p>6.50€ <span> / Almuerzo</span></p>
+                </div>
+                <div class="card"><img src="img/Delice.jpg" alt="delice">
+                    <h3>Delice</h3>
+                    <h5>Uno de los looks que mejor le queda al pollo, un abrigo de pan de doble fermentación combinado con cebolla frita, queso de cabra y mostaza.</h5>
+                    <p>7.00€ <span> / Almuerzo</span>
+                </div>
+                <div class="card"><img src="img/Full_Equip.jpg" alt="full equip">
+                    <h3>Full Equip</h3>
+                    <h5>El rey de los bocadillos. La Gran Burguesa acomodada en una cama de lechuga, tomate y mahonesa, acompañada de bacon, queso fundido y una salsa doble de ketchup y mostaza.</h5>
+                    <p>7.00€ <span> / Almuerzo</span>
+                </div>
+                <div class="card"><img src="img/Chivito_s.jpg" alt="chivito">
+                    <h3>Chivito's</h3>
+                    <h5>Pídelo a tu gusto. ¿Eres más de lomo o de pechuga?, ¿te gusta con o sin huevo?</h5>
+                    <p>7.00€ <span> / Almuerzo</span>
+                </div>
+                <div class="card"><img src="img/CardiBrie.jpg" alt="cardibrie">
+                    <h3>CardiBrie</h3>
+                    <h5>Imagina un bocadillo hecho con pan Gran Reserva acompañado de tomate rayado natural, lomo exquisito y queso brie coronándolo todo.</h5>
+                    <p>6.50€ <span> / Almuerzo</span>
+                </div>
+                <div class="card"><img src="img/Lomo_con_queso.jpg" alt="lomo con queso">
+                    <h3>Lomo con Queso</h3>
+                    <h5>¿A alguien hace falta explicarle ese bocadillo?. Auténtico lomo, con pan crujiente y queso fundido. ¡Delicioso!</h5>
+                    <p>7.00€ <span> / Almuerzo</span>
+                </div>
+                <div class="card"><img src="img/La_Brasca.jpg" alt="la brasca">
+                    <h3>La Brascà</h3>
+                    <h5>Que levante la mano quien no conozca este clásico del "esmorzaret". Un contundente bocadillo de ternera, cebolla frita y jamón</h5>
+                    <p>7.00€ <span> / Almuerzo</span>
+                </div>
+                <div class="card"><img src="img/Fallero.jpg" alt="">
+                    <h3>Fallero</h3>
+                    <h5>Uno más de la serie clasic's. Embutido variado con habas y cebolla. ¡A disfrutar!</h5>
+                    <p>6.00€ <span> / Almuerzo</span>
+                </div>
+                <div class="card"><img src="img/Tortilla_de_patata.jpg" alt="tortilla de patata">
+                    <h3>Tortilla de Patata</h3>
+                    <h5>Jugosa, tierna, recién hecha, ¿qué más atributos debería tener una buena tortilla?</h5>
+                    <p>6.00€ <span> / Almuerzo</span>
+                </div>
+                <div class="card"><img src="img/Ca_La_Mar.jpg" alt="ca la mar">
+                    <h3>Ca la Mar</h3>
+                    <h5>Un clásico. ¿Te gusta a la plancha o lo prefieres a la romana?.</h5>
+                    <p>7.90€ <span> / Almuerzo</span>
+                </div>
+                <div class="card"><img src="img/Almussafes.jpg" alt="almussafes">
+                    <h3>Almussafes</h3>
+                    <h5>¡Un clásico del esmorzaret! Sobrasada a la plancha, con cebolla frita y queso. ¡Irresistible!</h5>
+                    <p>6.00€ <span> / Almuerzo</span>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <div id="MenuDia" class="tabcontent">
+        <section class="bocadillos">
+            <div class="cardsMenu">
+                <div class="cardMenu">
+                    <img src="img/cabecera_Menu.HEIC" alt="Menu del dia foto">
+
+                    <h3>MENÚ DEL DIA</h3>
+                    <time id="menu_fecha">12 oct</time>
+
+
+                    <h4>PRIMEROS</h4>
+                    <h5 id="menu_a0"></h5>
+                    <h5 id="menu_a1"></h5>
+                    <h5 id="menu_a2"></h5>
+                    <h5 id="menu_a3"></h5>
+                    <h5 id="menu_a4"></h5>
+
+
+                    <h4>SEGUNDOS</h4>
+                    <h5 id="menu_p0"></h5>
+                    <h5 id="menu_p1"></h5>
+                    <h5 id="menu_p2"></h5>
+                    <h5 id="menu_p3"></h5>
+                    <h5 id="menu_p4"></h5>
+
+
+                    <h4>POSTRES</h4>
+                    <h5 id="menu_ps0"></h5>
+                    <h5 id="menu_ps1"></h5>
+                    <h5 id="menu_ps2"></h5>
+                    <h5 id="menu_ps3"></h5>
+                    <h5 id="menu_ps4"></h5>
+
+
+                    <h4>BEBIDAS</h4>
+                    <h5 id="menu_b0"></h5>
+                    <h5 id="menu_b1"></h5>
+                    <h5 id="menu_b2"></h5>
+                    <h5 id="menu_b3"></h5>
+                    <h5 id="menu_b4"></h5>
+
+                    <div class="preu">
+                        <p id="precio">10.00</p> <span> €/ MENÚ</span>
+                    </div>
+
+                    <p>Incluye: Primero, Segundo, Postre, Una Bebida y Café</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="MenuExecutive" class="tabcontent">
+        <section class="bocadillos">
+            <div class="cardsMenu">
+                <div class="cardMenu">
+                    <img src="img/cabecera_Menu.HEIC" alt="Menu del dia foto">
+
+                    <h3>MENU EXECUTIVE</h3>
+                    <time id="menu_efecha">12 oct</time>
+
+
+                    <h4>APERITIVOS DE LA CASA</h4>
+                    <h5 id="menu_ae0"></h5>
+                    <h5 id="menu_ae1"></h5>
+                    <h5 id="menu_ae2"></h5>
+                    <h5 id="menu_ae3"></h5>
+                    <h5 id="menu_ae4"></h5>
+
+                    <!-- ENTRANTES -->
+
+                    <h4>ENTRANTES</h4>
+                    <h5 id="menu_ee0"></h5>
+                    <h5 id="menu_ee1"></h5>
+                    <h5 id="menu_ee2"></h5>
+                    <h5 id="menu_ee3"></h5>
+                    <h5 id="menu_ee4"></h5>
+
+                    <h4>PLATOS PRINCIPALES</h4>
+                    <h5 id="menu_pe0"></h5>
+                    <h5 id="menu_pe1"></h5>
+                    <h5 id="menu_pe2"></h5>
+                    <h5 id="menu_pe3"></h5>
+                    <h5 id="menu_pe4"></h5>
+
+
+                    <h4>POSTRES</h4>
+                    <h5 id="menu_pse0"></h5>
+                    <h5 id="menu_pse1"></h5>
+                    <h5 id="menu_pse2"></h5>
+                    <h5 id="menu_pse3"></h5>
+                    <h5 id="menu_pse4"></h5>
+
+
+                    <h4>BEBIDAS</h4>
+                    <h5 id="menu_be0"></h5>
+                    <h5 id="menu_be1"></h5>
+                    <h5 id="menu_be2"></h5>
+                    <h5 id="menu_be3"></h5>
+                    <h5 id="menu_be4"></h5>
+
+                    <div class="preu">
+                        <p id="precio_e">10.00</p> <span> €/ MENÚ</span>
+                    </div>
+
+                    <p>Incluye: Aperitivo de la Casa, Entrante, Plato Principal, Postre, Una Bebida y Café</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!--------------------------------------------
+      ----------------------------------------------
+                         FOOTER
+      ----------------------------------------------
+      ---------------------------------------------->
+    <footer class="footer">
+
+        <div style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,92.27 C216.83,192.92 304.30,8.39 500.00,109.03 L500.00,0.00 L0.00,0.00 Z" style="stroke: none;fill: #F8DEB1;"></path>
+            </svg>
+        </div>
+        <div class="containerIni footer__caption">
+            <section class="descarga">
+
+                <div class="footer__copy">
+                    <p class="copyright">La Mesedora &copy; 2020 Todos los derechos reservados</p>
+                    <p class="copyright">Made with <i class="fas fa-heart"></i> <a href="https://www.linkedin.com/in/ignacio-chamb%C3%B3-maravilla-8a241b1b9/" target="_blank">Ignacio Chambó Maravilla</a></p>
+                    <a href="#" class="politica__privacidad politica__privacidad--margin">Politica de privacidad</a>
+                    <a href="#" class="politica__privacidad ">Terminos y condiciones</a>
+                </div>
+            </section>
+            <section class="get-email">
+                <h3 class="title__footer">¿Quieres estar actualizado?</h3>
+
+                <div class="socialmedia">
+                    <p class="socialmedia__legend">Siguenos en:</p>
+                    <a href="https://www.facebook.com/lamesedoralgemesi/" target="_blank"><i class='socialmedia__icon fab fa-facebook-f'></i></a>
+                    <a href="https://www.instagram.com/la_mesedora_algemesi/?hl=es" target="_blank"><i class="socialmedia__icon fab fa-instagram"></i></a>
+                </div>
+            </section>
+
+        </div>
+    </footer>
+
+
+    <script>
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+    </script>
+    <script type="text/javascript" src="js/mostrarMenusCarta.js"></script>
+    <script type="text/javascript" src="js/ocultarMenuCarta.js"></script>
+
+</body>
+
+</html>
